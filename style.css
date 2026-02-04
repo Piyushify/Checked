@@ -1,156 +1,57 @@
 :root {
-  --unit: 12vw;
+  --color1: #2B2B2B;
+  --color2: #F6F6F6;
 }
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
-#game {
-  height: 100vh;
-  width: 100vw;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+body {
+  background-color: #AAAAAA;
 }
-#canvas {
-  position: absolute;
-  top: 0;
-  width: 100vw;
-  aspect-ratio: 1/1;
-  background: hsl(0, 0%, 25%);
-  border: 2vw solid #000;
-}
-#checkbox {
-  position: absolute;
-  left: 0;
-  top: 0;
-  height: var(--unit);
-  aspect-ratio: 1/1;
-  background: hsl(0, 0%, 25%);
-  color: #000;
-  box-shadow:
-  calc(var(--unit)*1) 
-  calc(var(--unit)*0),
-  calc(var(--unit)*3) 
-  calc(var(--unit)*0),
-  calc(var(--unit)*5) 
-  calc(var(--unit)*0),
-  calc(var(--unit)*7) 
-  calc(var(--unit)*0),
-  calc(var(--unit)*0) 
-  calc(var(--unit)*1),
-  calc(var(--unit)*2)
-  calc(var(--unit)*1),
-  calc(var(--unit)*4)
-  calc(var(--unit)*1),
-  calc(var(--unit)*6)
-  calc(var(--unit)*1),
-  calc(var(--unit)*1)
-  calc(var(--unit)*2),
-  calc(var(--unit)*3)
-  calc(var(--unit)*2),
-  calc(var(--unit)*5)
-  calc(var(--unit)*2),
-  calc(var(--unit)*7)
-  calc(var(--unit)*2),
-  calc(var(--unit)*0)
-  calc(var(--unit)*3),
-  calc(var(--unit)*2)
-  calc(var(--unit)*3),
-  calc(var(--unit)*4)
-  calc(var(--unit)*3),
-  calc(var(--unit)*6)
-  calc(var(--unit)*3),
-  calc(var(--unit)*1)
-  calc(var(--unit)*4),
-  calc(var(--unit)*3)
-  calc(var(--unit)*4),
-  calc(var(--unit)*5)
-  calc(var(--unit)*4),
-  calc(var(--unit)*7)
-  calc(var(--unit)*4),
-  calc(var(--unit)*0)
-  calc(var(--unit)*5),
-  calc(var(--unit)*2)
-  calc(var(--unit)*5),
-  calc(var(--unit)*4)
-  calc(var(--unit)*5),
-  calc(var(--unit)*6)
-  calc(var(--unit)*5),
-  calc(var(--unit)*1)
-  calc(var(--unit)*6),
-  calc(var(--unit)*3)
-  calc(var(--unit)*6),
-  calc(var(--unit)*5)
-  calc(var(--unit)*6),
-  calc(var(--unit)*7)
-  calc(var(--unit)*6),
-  calc(var(--unit)*0)
-  calc(var(--unit)*7),
-  calc(var(--unit)*2)
-  calc(var(--unit)*7),
-  calc(var(--unit)*4)
-  calc(var(--unit)*7),
-  calc(var(--unit)*6)
-  calc(var(--unit)*7);
-}
-#player {
-  position: absolute;
-  width: var(--unit);
-  aspect-ratio: 1/1;
-  background: yellow;
-  border: 5px solid;
-  border-radius: 50%;
-  left: 0;
-  top: 0;
-}
-#hider {
-  position: fixed;
-  display: none;
-  width: 100vw;
-  height: 100vh;
-  z-index: 9999;
-  background: #fff;
-  color: #000;
-  font-size: 30px;
-  align-items: center;
-  justify-content: center;
+header {
   text-align: center;
+  font-size: 3em;
+  font-family: "Audiowide";
 }
-@media (orientation: landscape) {
-  #hider {
-    display: flex;
-  }
+header span:nth-child(1){
+  color: var(--color1);
 }
-#controls {
+header span:nth-child(2){
+  color: var(--color2);
+}
+header span:nth-child(3) {
+  color: var(--color1);
+}
+header span:nth-child(4) {
+  color: var(--color2);
+}
+header span:nth-child(5) {
+  color: var(--color1);
+}
+header span:nth-child(6) {
+  color: var(--color2);
+}
+header span:nth-child(7) {
+  color: var(--color1);
+}
+.board {
   position: absolute;
-  top: calc(100vw + 10vw);
-}
-#controls button {
-  height: 60px;
-  width: 60px;
-  margin: 10px;
-  font-size: 30px;
-  background: hsl(0, 0%, 75%);
-  border: 1vw solid #000;
-  border-radius: 50%;
-}
-#controls button:active {
-  background: hsl(0, 0%, 25%);
-}
-#above,#below {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-#below {
-  justify-content: space-evenly;
-}
-#up {
-  transform: rotate(90deg);
-}
-#down {
-  transform: rotate(-90deg);
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  width: 90vw;
+  aspect-ratio: 1;
+  border: 2vw solid var(--color1);
+  border-radius: 15px;
+  background-image: 
+  conic-gradient( 
+  var(--color1) 0deg,
+  var(--color1) 90deg,
+  var(--color2) 90deg,
+  var(--color2) 180deg,
+  var(--color1) 180deg,
+  var(--color1) 270deg,
+  var(--color2) 270deg);
+  background-size: 22.5vw 22.5vw;
 }
