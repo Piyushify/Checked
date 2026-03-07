@@ -1,0 +1,106 @@
+/*import the audiowide fonts*/
+@font-face {
+  font-family: "Audiowide";
+  src: url("fonts/Audiowide-Regular.ttf") format("truetype");
+}
+
+/*define global variables*/
+:root {
+    --color1: #F2F2F2;
+    --color2: #2F2F2F;
+    --back: #A1A1A1;
+    --front: #1A1A1A;
+    --board: 320px;
+}
+
+/*for all*/
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/*body*/
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: var(--back);
+}
+
+/*name*/
+#name {
+    position: fixed;
+    top: 0;
+    font-family: Audiowide;
+    font-size: 2.5rem;
+}
+
+/*odd spans in name*/
+#name span:nth-child(odd) {
+    color: var(--color2);
+}
+
+/*even spans in name*/
+#name span:nth-child(even) {
+    color: var(--color1);
+}
+
+/*the board*/
+.board{
+    width: var(--board);
+    aspect-ratio: 1;
+    display: flex;
+    flex-wrap: wrap;
+    background: var(--front);
+    border: 0.5rem solid var(--front);
+    border-radius: 1.5rem;
+    overflow: hidden;
+}
+
+/*all cells*/
+.cell{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: calc(var(--board)/8);
+    aspect-ratio: 1;
+    background: var(--back);
+}
+
+/*overwrite the cells as per the pattern*/
+.cell:nth-child(16n + 2),
+.cell:nth-child(16n + 4),
+.cell:nth-child(16n + 6),
+.cell:nth-child(16n + 8),
+.cell:nth-child(16n + 9),
+.cell:nth-child(16n + 11),
+.cell:nth-child(16n + 13),
+.cell:nth-child(16n + 15) {
+    background: var(--front);
+}
+
+/*highlight selected cell*/
+.cell.highlight::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(255,255,0,0.25);
+    border: 2px solid yellow;
+}
+
+/*all pieces*/
+.piece {
+    width: calc(var(--board)/8);
+}
+
+/*white pieces*/
+.white {
+    color: var(--color1);
+}
+
+/*black pieces*/
+.black {
+    color: var(--color2);
+}
