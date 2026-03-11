@@ -31,7 +31,7 @@ body {
     position: fixed;
     top: 0;
     font-family: Audiowide;
-    font-size: 2.5rem;
+    font-size: 2.3rem;
 }
 
 /*odd spans in name*/
@@ -44,6 +44,13 @@ body {
     color: var(--color1);
     -webkit-text-stroke: 1px var(--color2);
     stroke-width: 16px;
+}
+
+#name span:nth-child(5) svg {
+    color: var(--color2);
+    width: 2.5rem;
+    position: sticky;
+    top: 6px;
 }
 
 /*the board*/
@@ -87,7 +94,7 @@ body {
     position: absolute;
     inset: 0;
     background: rgba(255,255,0,0.25);
-    border: 2px solid rgba(255,255,0.5);
+    border: 2px solid rgba(255, 255, 0, 1);
 }
 /*all pieces*/
 .piece {

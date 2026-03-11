@@ -108,3 +108,22 @@ cells.forEach(cell => {
     cell.classList.add("highlight");
   });
 });
+
+
+function king() {
+  
+  //fetches the file at the location
+  fetch("pieces/king.svg")
+  
+  //converts the files content to text
+  .then(res => res.text())
+  
+  //puts the text to the position
+  .then(data => {
+    
+    //selects all the cells
+    const kingit = document.getElementById("kingit");
+    kingit.innerHTML = data;
+  })
+}
+king();
