@@ -8,8 +8,6 @@
 :root {
     --color1: #F2F2F2;
     --color2: #2F2F2F;
-    --back: #A1A1A1;
-    --front: #1A1A1A;
     --board: 320px;
 }
 
@@ -25,7 +23,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: var(--back);
+    background-color: var(--color1);
 }
 
 /*name*/
@@ -44,6 +42,8 @@ body {
 /*even spans in name*/
 #name span:nth-child(even) {
     color: var(--color1);
+    -webkit-text-stroke: 1px var(--color2);
+    stroke-width: 16px;
 }
 
 /*the board*/
@@ -52,8 +52,8 @@ body {
     aspect-ratio: 1;
     display: flex;
     flex-wrap: wrap;
-    background: var(--front);
-    border: 0.5rem solid var(--front);
+    background: var(--color2);
+    border: 0.5rem solid var(--color2);
     border-radius: 1.5rem;
     overflow: hidden;
 }
@@ -66,7 +66,7 @@ body {
     align-items: center;
     width: calc(var(--board)/8);
     aspect-ratio: 1;
-    background: var(--back);
+    background: var(--color1);
 }
 
 /*overwrite the cells as per the pattern*/
@@ -78,7 +78,7 @@ body {
 .cell:nth-child(16n + 11),
 .cell:nth-child(16n + 13),
 .cell:nth-child(16n + 15) {
-    background: var(--front);
+    background: var(--color2);
 }
 
 /*highlight selected cell*/
@@ -87,20 +87,22 @@ body {
     position: absolute;
     inset: 0;
     background: rgba(255,255,0,0.25);
-    border: 2px solid yellow;
+    border: 2px solid rgba(255,255,0.5);
 }
-
 /*all pieces*/
 .piece {
     width: calc(var(--board)/8);
+    stroke-width: 16px;
 }
 
 /*white pieces*/
 .white {
     color: var(--color1);
+    stroke: var(--color2);
 }
 
 /*black pieces*/
 .black {
     color: var(--color2);
+    stroke: var(--color1);
 }
