@@ -2,6 +2,7 @@
 console.log('JS Connected');
 
 //variables
+const root = document.documentElement;
 const board = document.querySelector(".board");
 
 //create function
@@ -127,3 +128,10 @@ function king() {
   })
 }
 king();
+function switchTheme() {
+  if (root.classList.contains("light")) {
+    root.classList.replace("light", "dark");
+  } else {
+    root.classList.replace("dark", "light");
+  }
+}

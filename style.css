@@ -6,11 +6,16 @@
 
 /*define global variables*/
 :root {
-    --color1: #F2F2F2;
-    --color2: #2F2F2F;
     --board: 320px;
 }
-
+.light {
+    --color1: #F2F2F2;
+    --color2: #2F2F2F;
+}
+.dark {
+    --color1: #2F2F2F;
+    --color2: #F2F2F2;
+}
 /*for all*/
 * {
     margin: 0;
@@ -45,8 +50,11 @@ body {
     -webkit-text-stroke: 1px var(--color2);
     stroke-width: 16px;
 }
-
-#name span:nth-child(5) svg {
+#kingit {
+    background: none;
+    border: none;
+}
+#kingit svg {
     color: var(--color2);
     width: 2.5rem;
     position: sticky;
