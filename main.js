@@ -4,6 +4,8 @@ console.log('JS Connected');
 //variables
 const root = document.documentElement;
 const board = document.querySelector(".board");
+let buffer = document.createElement("div");
+let selectedPiece = null;
 
 //create function
 //creates the cells
@@ -22,7 +24,6 @@ function create() {
     //appends the div into the board
     board.appendChild(cell);
   }
-  
 }
 
 //function call for create()
@@ -68,49 +69,69 @@ function inject(location,name,position) {
     //selects all the cells
     const cells = document.querySelectorAll(".cell");
       
-        //for every position
-        position.forEach(i => {
+    //for every position
+    position.forEach(i => {
           
-        //inserts the data to the ith cell
-        cells[i].innerHTML = data;
+      //inserts the data to the ith cell
+      cells[i].innerHTML = data;
         
-        //get the injected element
-        const piece = cells[i].firstElementChild;
+      //get the injected element
+      const piece = cells[i].firstElementChild;
         
-        //assigns classes
-        piece.classList.add("piece",name);
+      //assigns classes
+      piece.classList.add("piece",name);
         
-        //assigns class white
-        if (i < 16) piece.classList.add("white");
+      //assigns class white
+      if (i < 16) piece.classList.add("white");
         
-        //asigns class black
-        if (i >= 48) piece.classList.add("black");
-        });
+      //asigns class black
+      if (i >= 48) piece.classList.add("black");
+    });
   })
 }
 
 //select all cells
 const cells = document.querySelectorAll(".cell");
 
-//for every cell
+//for every cell 
 cells.forEach(cell => {
   
-  //add click event to each cell
+  //event listner for any cell click
   cell.addEventListener("click", () => {
     
-    //loop through each cell
+    //for every cell
     cells.forEach(c => {
       
-      //check if any previous highlight class exist and remove it
+      //remove if highlight class exist
       c.classList.remove("highlight");
     });
     
-    //add highlight class
-    cell.classList.add("highlight");
+    //if selected piece is still null
+    if (!selectedPiece) {
+      
+      //select the piece
+      selectedPiece = cell.querySelector(".piece");
+      
+      //if selected piece has a value now
+      if (selectedPiece) {
+      
+        //add class highlight to the cell of the selected piece
+        cell.classList.add("highlight");
+      }
+    }
+    //once above steps are done
+    else {
+      
+      //puts to the next clicked cell
+      cell.append(selectedPiece);
+      
+      //resets the selected cell
+      selectedPiece = null;
+    }
   });
 });
 
-
+//function king
 function king() {
   
   //fetches the file at the location
@@ -122,16 +143,32 @@ function king() {
   //puts the text to the position
   .then(data => {
     
-    //selects all the cells
+    //select kingit
     const kingit = document.getElementById("kingit");
+    
+    //puts the data to kingit
     kingit.innerHTML = data;
   })
 }
+
+//calls the function king()
 king();
+
+//switch theme function
 function switchTheme() {
+  
+  //if root has the class light
   if (root.classList.contains("light")) {
+    
+    //replace the class light with dark
     root.classList.replace("light", "dark");
-  } else {
+    
+  }
+  
+  //if root does not have the class light that means it has the class dark
+  else {
+    
+    //replace the class dark with light
     root.classList.replace("dark", "light");
   }
 }
