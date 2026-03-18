@@ -164,7 +164,6 @@ function switchTheme() {
     
     //replace the class light with dark
     root.classList.replace("light", "dark");
-    
   }
   
   //if root does not have the class light that means it has the class dark
