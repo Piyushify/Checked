@@ -1,9 +1,11 @@
 //testing
 console.log('JS Connected');
 
-//variables
+//constants
 const root = document.documentElement;
 const board = document.querySelector(".board");
+
+//variables
 let buffer = document.createElement("div");
 let selectedPiece = null;
 

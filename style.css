@@ -4,6 +4,7 @@
   src: url("fonts/Audiowide-Regular.ttf") format("truetype");
 }
 
+/*the root element ie html*/
 /*define global variables*/
 :root {
     --board: 320px;
@@ -20,6 +21,7 @@
     --color1: #2F2F2F;
     --color2: #F2F2F2;
 }
+
 /*for all*/
 * {
     margin: 0;
