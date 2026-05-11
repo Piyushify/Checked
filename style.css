@@ -1,7 +1,7 @@
 /*import the audiowide fonts*/
 @font-face {
   font-family: "Audiowide";
-  src: url("fonts/Audiowide-Regular.ttf") format("truetype");
+  src: url("fonts/Audiowide-Regular.ttf");
 }
 
 /*the root element ie html*/
@@ -140,7 +140,6 @@ footer {
 	bottom: 0;
 	right: 0;
 	margin: 1rem;
-	margin-right: 3rem;
 	font-size: 14px;
 }
 
@@ -154,12 +153,4 @@ footer a {
 /*behaviour of the link in footer*/
 footer a:active {
 	font-size: 12px;
-}
-
-/*the image in the footer*/
-footer img {
-	position: absolute;
-	height: 1.5rem;
-	bottom: 0;
-	margin-left: 6px;
 }
