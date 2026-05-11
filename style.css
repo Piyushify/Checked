@@ -12,14 +12,14 @@
 
 /*light theme*/
 .light {
-    --color1: #F2F2F2;
-    --color2: #2F2F2F;
+    --color1: hsla(0, 0%, 80%, 1);
+    --color2: hsla(0, 0%, 20%, 1);
 }
 
 /*dark theme*/
 .dark {
-    --color1: #2F2F2F;
-    --color2: #F2F2F2;
+    --color1: hsla(0, 0%, 20%, 1);
+    --color2: hsla(0, 0%, 80%, 1);
 }
 
 /*for all*/
@@ -68,7 +68,7 @@ body {
     color: var(--color2);
     width: 2.5rem;
     position: sticky;
-    top: 6px;
+    top: 1rem;
 }
 
 /*the board*/
