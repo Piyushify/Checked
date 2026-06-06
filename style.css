@@ -7,7 +7,7 @@
 /*the root element ie html*/
 /*define global variables*/
 :root {
-    --board: 80vw;
+    --board: min(80vw,80vh);
 }
 
 /*light theme*/
