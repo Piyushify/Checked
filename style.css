@@ -7,7 +7,7 @@
 /*the root element ie html*/
 /*define global variables*/
 :root {
-    --board: min(90vw,60vh);
+    --board: 90vw;
 }
 
 /*light theme*/
@@ -26,6 +26,7 @@
 * {
     margin: 0;
     padding: 0;
+    font-family: Audiowide;
 }
 
 /*body*/
@@ -40,8 +41,7 @@ body {
 /*name*/
 #name {
     position: fixed;
-    top: 0;
-    font-family: Audiowide;
+    top: 1rem;
     font-size: 2.3rem;
 }
 
@@ -78,10 +78,47 @@ body {
     display: grid;
     grid-template-rows: repeat(8,1fr);
     grid-template-columns: repeat(8,1fr);
-    background: var(--color2);
-    border: 0.5rem solid var(--color2);
-    border-radius: 1.5rem;
+    border-radius: 1rem;
     overflow: hidden;
+}
+
+.board-wrapper {
+    background: var(--color2);
+    padding: 5vw;
+    border-radius: 1.75rem;
+    font-size: 0.65rem;
+    color: var(--color1);
+    border: 1px solid var(--color1);
+}
+
+.indentX {
+    position: absolute;
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.indentY {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    z-index: 9999;
+}
+
+.indentX div {
+    height: calc(var(--board)/8);
+    width: 5vw;
+    transform: translateX(-5vw);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.indentY div {
+    width: calc(var(--board)/8);
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /*all cells*/
@@ -115,7 +152,7 @@ body {
 /*all pieces*/
 .piece {
     width: calc(var(--board)/8);
-    stroke-width: 16px;
+    stroke-width: 0.75rem;
 }
 
 /*white pieces*/
@@ -134,7 +171,7 @@ body {
 footer {
 	position: fixed;
 	font-family: "Audiowide";
-	bottom: 0;
+	bottom: 1rem;
 	right: 0;
 	margin: 1rem;
 	font-size: 14px;
