@@ -76,10 +76,10 @@ function inject(location,name,position) {
       piece.classList.add("piece",name);
         
       //assigns class white
-      if (i < 16) piece.classList.add("white");
+      if (i < 16) piece.classList.add("black");
         
       //asigns class black
-      if (i >= 48) piece.classList.add("black");
+      if (i >= 48) piece.classList.add("white");
     });
   })
 }

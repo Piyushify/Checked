@@ -1,5 +1,6 @@
 //variables
 let selectedPiece = null;
+let turn = "white";
 
 //for every cell 
 cells.forEach(cell => {
