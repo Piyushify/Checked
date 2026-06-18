@@ -1,6 +1,6 @@
 //form_board function
 //creates the cells
-function form_board() {
+function generate_board() {
   
   //loops from 0 to 63 for 64 cells
   //cause index begins at 0
@@ -18,7 +18,7 @@ function form_board() {
 }
 
 //function call for form_board()
-form_board();
+generate_board();
 
 //select all cells
 const cells = document.querySelectorAll(".cell");
@@ -85,7 +85,7 @@ function inject(location,name,position) {
 }
 
 //function king
-function king() {
+function switcher() {
   
   //fetches the file at the location
   fetch("pieces/king.svg")
@@ -97,12 +97,12 @@ function king() {
   .then(data => {
     
     //select kingit
-    const kingit = document.getElementById("kingit");
+    const switcher = document.getElementById("switcher");
     
     //puts the data to kingit
-    kingit.innerHTML = data;
+    switcher.innerHTML = data;
   })
 }
 
 //calls the function king()
-king();
+switcher();
