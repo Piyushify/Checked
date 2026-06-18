@@ -5,10 +5,6 @@ console.log('JS Connected');
 const root = document.documentElement;
 const board = document.querySelector(".board");
 
-//variables
-let buffer = document.createElement("div");
-let selectedPiece = null;
-
 //switch theme function
 function switchTheme() {
   

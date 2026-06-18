@@ -86,7 +86,7 @@ body {
     background: var(--color2);
     padding: 5vw;
     border-radius: 1.75rem;
-    font-size: 0.65rem;
+    font-size: 0.25rem;
     color: var(--color1);
     border: 1px solid var(--color1);
 }
@@ -101,7 +101,6 @@ body {
     position: absolute;
     display: flex;
     flex-direction: row;
-    z-index: 9999;
 }
 
 .indentX div {
@@ -115,7 +114,7 @@ body {
 
 .indentY div {
     width: calc(var(--board)/8);
-    height: fit-content;
+    height: 5vw;
     display: flex;
     justify-content: center;
     align-items: center;

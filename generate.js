@@ -1,5 +1,5 @@
-//form_board function
-//creates the cells
+//generate_board function
+//generates the cells of board
 function generate_board() {
   
   //loops from 0 to 63 for 64 cells
@@ -17,7 +17,7 @@ function generate_board() {
   }
 }
 
-//function call for form_board()
+//function call generate_board()
 generate_board();
 
 //select all cells
@@ -84,7 +84,7 @@ function inject(location,name,position) {
   })
 }
 
-//function king
+//function switcher
 function switcher() {
   
   //fetches the file at the location
@@ -104,5 +104,5 @@ function switcher() {
   })
 }
 
-//calls the function king()
+//calls the function switcher()
 switcher();

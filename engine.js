@@ -1,3 +1,6 @@
+//variables
+let selectedPiece = null;
+
 //for every cell 
 cells.forEach(cell => {
   
