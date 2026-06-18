@@ -3,18 +3,22 @@ let selectedPiece = null;
 let turn = "white";
 
 let figs = {
-  "white-king" : "♔" ,
-  "white-queen" : "♕" ,
-  "white-rook" : "♖" ,
-  "white-bishop" : "♗" ,
-  "white-knight" : "♘" ,
-  "white-pawn" : "♙" ,
-  "black-king" : "♚" ,
-  "black-queen" : "♛" ,
-  "black-rook" : "♜" ,
-  "black-bishop" : "♝" ,
-  "black-knight" : "♞" ,
-  "black-pawn" : "♟" ,
+  "white" : {
+    "king" : "♔" ,
+    "queen" : "♕" ,
+    "rook" : "♖" ,
+    "bishop" : "♗" ,
+    "knight" : "♘" ,
+    "pawn" : "♙" 
+  },
+  "black" : {
+  "king" : "♚" ,
+  "queen" : "♛" ,
+  "rook" : "♜" ,
+  "bishop" : "♝" ,
+  "knight" : "♞" ,
+  "pawn" : "♟"
+  }
 }
 
 //for every cell 
@@ -55,4 +59,4 @@ cells.forEach(cell => {
   });
 });
 
-document.getElementById("cord-bar").textContent = "1" + ". " + figs["white-knight"] + "c" + "3";
+document.getElementById("cord-bar").textContent = "1" + ". " + figs["white"]["knight"] + "c" + "3";

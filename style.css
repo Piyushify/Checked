@@ -94,7 +94,6 @@ body {
     grid-template-columns: repeat(8,1fr);
     border-radius: 1rem;
     overflow: hidden;
-    border: 1px solid ;
 }
 
 .board-wrapper {
@@ -103,7 +102,6 @@ body {
     border-radius: 1.75rem;
     font-size: 0.25rem;
     color: var(--color1);
-    border: 1px solid var;
 }
 
 .indentX {
