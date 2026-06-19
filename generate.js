@@ -4,13 +4,19 @@ function generate_board() {
   
   //loops from 0 to 63 for 64 cells
   //cause index begins at 0
+  let colnum = null;
+  let rownum = null;
   for (let i = 0; i < 64; i++) 
   {
+    rownum = 8 - Math.floor(i/8);
+    colnum = String.fromCharCode(97 + (i%8));
     //creates a div
     const cell = document.createElement("div");
     
     //adds classes
     cell.classList.add("cell");
+    cell.classList.add("c" + colnum);
+    cell.classList.add("r" + rownum);
     
     //appends the div into the board
     board.appendChild(cell);
