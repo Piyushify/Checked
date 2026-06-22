@@ -1,6 +1,10 @@
 //variables
-let selectedPiece = null;
-let turn = "white";
+let pieceName = null;
+let pieceColor = null;
+let piece = null;
+let cell = null;
+let cellRow = null;
+let cordBar = document.getElementById("cord-bar");
 
 let figs = {
   "white" : {
@@ -21,42 +25,20 @@ let figs = {
   }
 }
 
-//for every cell 
-cells.forEach(cell => {
-  
-  //event listner for any cell click
-  cell.addEventListener("click", () => {
-    
-    //for every cell
-    cells.forEach(c => {
-      
-      //remove if highlight class exist
-      c.classList.remove("highlight");
-    });
-    
-    //if selected piece is still null
-    if (!selectedPiece) {
-      
-      //select the piece
-      selectedPiece = cell.querySelector(".piece");
-      
-      //if selected piece has a value now
-      if (selectedPiece) {
-      
-        //add class highlight to the cell of the selected piece
-        cell.classList.add("highlight");
-      }
+board.addEventListener("click", (event) => {
+    piece = event.target.closest(".piece");
+    cell = event.target.closest(".cell");
+    cellRow = cell.classList[1].slice(1);
+    cellColumn= cell.classList[2].slice(1);
+    if (piece) {
+      pieceName = piece.classList[1];
+      pieceColor = piece.classList[2];
+      console.log(pieceName,pieceColor)
+      console.log(`${cellColumn}${cellRow}`); 
+    } else {
+      console.log(cell.classList);
     }
-    //once above steps are done
-    else {
-      
-      //puts to the next clicked cell
-      cell.append(selectedPiece);
-      
-      //resets the selected cell
-      selectedPiece = null;
-    }
-  });
+    
 });
 
-document.getElementById("cord-bar").textContent = "1" + ". " + figs["white"]["knight"] + "c" + "3";
+cordBar.textContent = "1" + ". " + figs["white"]["knight"] + "c" + "3";

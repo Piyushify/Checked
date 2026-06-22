@@ -15,8 +15,8 @@ function generate_board() {
     
     //adds classes
     cell.classList.add("cell");
-    cell.classList.add("c" + colnum);
     cell.classList.add("r" + rownum);
+    cell.classList.add("c" + colnum);
     
     //appends the div into the board
     board.appendChild(cell);
