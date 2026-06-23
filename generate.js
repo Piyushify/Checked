@@ -3,9 +3,7 @@
 function generate_board() {
   
   //loops from 0 to 63 for 64 cells
-  //cause index begins at 0
-  let colnum = null;
-  let rownum = null;
+  let colnum = null,rownum = null;
   for (let i = 0; i < 64; i++) 
   {
     rownum = 8 - Math.floor(i/8);
@@ -14,9 +12,7 @@ function generate_board() {
     const cell = document.createElement("div");
     
     //adds classes
-    cell.classList.add("cell");
-    cell.classList.add("r" + rownum);
-    cell.classList.add("c" + colnum);
+    cell.classList.add("cell","r" + rownum,"c" + colnum);
     
     //appends the div into the board
     board.appendChild(cell);
@@ -65,9 +61,6 @@ function inject(location,name,position) {
   
   //puts the text to the position
   .then(data => {
-    
-    //selects all the cells
-    const cells = document.querySelectorAll(".cell");
       
     //for every position
     position.forEach(i => {

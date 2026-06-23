@@ -4,10 +4,11 @@ let pieceColor = null;
 let piece = null;
 let cell = null;
 let cellRow = null;
+let turn = 1;
 let cordBar = document.getElementById("cord-bar");
 
 let figs = {
-  "white" : {
+  "black" : {
     "king" : "♔" ,
     "queen" : "♕" ,
     "rook" : "♖" ,
@@ -15,7 +16,7 @@ let figs = {
     "knight" : "♘" ,
     "pawn" : "♙" 
   },
-  "black" : {
+  "white" : {
   "king" : "♚" ,
   "queen" : "♛" ,
   "rook" : "♜" ,
@@ -33,12 +34,11 @@ board.addEventListener("click", (event) => {
     if (piece) {
       pieceName = piece.classList[1];
       pieceColor = piece.classList[2];
-      console.log(pieceName,pieceColor)
-      console.log(`${cellColumn}${cellRow}`); 
+      cordBar.textContent = ` ${turn}. ${figs[pieceColor][pieceName]}${cellColumn}${cellRow} `;
+      turn++;
     } else {
-      console.log(cell.classList);
+      cordBar.textContent = ` ${turn}. ${cellColumn}${cellRow}`;
+      turn++;
     }
     
 });
-
-cordBar.textContent = "1" + ". " + figs["white"]["knight"] + "c" + "3";
