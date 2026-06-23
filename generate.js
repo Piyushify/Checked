@@ -3,7 +3,8 @@
 function generate_board() {
   
   //loops from 0 to 63 for 64 cells
-  let colnum = null,rownum = null;
+  let colnum = null;
+  let rownum = null;
   for (let i = 0; i < 64; i++) 
   {
     rownum = 8 - Math.floor(i/8);
@@ -72,13 +73,16 @@ function inject(location,name,position) {
       const piece = cells[i].firstElementChild;
         
       //assigns classes
-      piece.classList.add("piece",name);
+      piece.classList.add("piece");
         
       //assigns class white
       if (i < 16) piece.classList.add("black");
         
       //asigns class black
       if (i >= 48) piece.classList.add("white");
+      
+      piece.classList.add(name);
+      
     });
   })
 }
